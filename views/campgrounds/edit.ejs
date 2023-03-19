@@ -1,0 +1,17 @@
+<% layout('layout/boilerplate')%>
+    <h1>Edit Campground</h1>
+    <form action="/campgrounds/<%=camp._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="title">Title</label>
+            <input type="text" name="campground[title]" id="title" value="<%=camp.title %>">
+            <!-- <label for=""></label> -->
+        </div>
+        <div>
+            <label for="location">Location</label>
+            <input type="text" name="campground[location]" id="location" value="<%=camp.location%>">
+            <!-- <label for=""></label> -->
+        </div>
+        <!-- forms can only sebd a get and post request so inorder to update we use override function -->
+        <button>Update Campground</button>
+    </form>
+    <a href="/campgrounds/<%=camp._id%>">BACK TO Campground</a>
